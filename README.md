@@ -15,7 +15,6 @@ Payment and Inventory beans are injected in Order beans using @Autowired annotat
 3) Java based configuration 
 Student bean is configured in com.sunilos.spring.ConfigContext java class using @Bean annotation 
 
+See wiki for more understanding 
 
-#Import and Run project in Eclipse
-
-Read URL http://www.sunilos.com/Home/java-development-environment-setup/import-an-eclipse-project#TOC-Import-Eclipse-Project-from-GitHub
+https://github.com/sunilos/SOSSpringCore/wiki
