@@ -1,7 +1,7 @@
 # SOSSpringCore
 Containing Spring IOC container configuration, bean lifecycle management and dependency injection examples.  
 
-There three ways to configure a bean 
+There are three ways to configure a bean 
 
 1) Using <bean> Tag 
 Account, Customer, Role and User beans are configured using bean tags. 
