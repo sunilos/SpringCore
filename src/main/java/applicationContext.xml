@@ -1,0 +1,33 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+
+  http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+
+  http://www.springframework.org/schema/context
+
+    http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<bean id="accountBean" class="com.sunilos.spring.bean.Account" />
+
+	<!-- create customer bean and inject account bean using constructor injection -->
+	<bean id="customerBean" class="com.sunilos.spring.bean.Customer"
+		init-method="init" destroy-method="destroy">
+		<constructor-arg name="account" ref="accountBean"></constructor-arg>
+	</bean>
+
+	<bean id="roleBean" class="com.sunilos.spring.bean.Role" />
+
+	<!-- create user bean and inject role bean using setter injection -->
+	<bean id="userBean" class="com.sunilos.spring.bean.User">
+		<property name="firstName" value="SunilOS" />
+		<!--Inject role bean using setter injection -->
+		<property name="role" ref="roleBean" />
+	</bean>
+
+	<!--Scan @Component, @Repository, @Service,and @Controller spring beans -->
+	<context:component-scan base-package="com.sunilos.spring" />
+
+</beans>
