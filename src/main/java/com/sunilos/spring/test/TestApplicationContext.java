@@ -7,7 +7,7 @@ import com.sunilos.spring.bean.Customer;
 import com.sunilos.spring.bean.Order;
 import com.sunilos.spring.bean.Student;
 import com.sunilos.spring.bean.User;
-import com.sunilos.spring.bean.service.UserService;
+import com.sunilos.spring.service.UserService;
 
 /**
  * 

@@ -1,9 +1,9 @@
-package com.sunilos.spring.bean.service;
+package com.sunilos.spring.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.sunilos.spring.bean.dao.UserDAO;
+import com.sunilos.spring.dao.UserDAO;
 
 /**
  * Use service provides User business operations.

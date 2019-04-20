@@ -1,4 +1,4 @@
-package com.sunilos.spring.bean.dao;
+package com.sunilos.spring.dao;
 
 import org.springframework.stereotype.Repository;
 
