@@ -5,7 +5,9 @@ This project contains Spring IOC container configuration, bean lifecycle managem
 
 There are two ways to configure a bean 
 
-1) <bean> tag in XML based configuration 
+1) XML based configuration
+
+`< bean >` is used to configure a bean in XML based configuration 
   
 `#ApplicationContext.xml`
 
@@ -15,7 +17,9 @@ Account, Customer, Role and User beans are configured using bean tags. Role and 
 
 See: https://github.com/sunilos/SpringCore/blob/master/src/main/java/applicationContext.xml
 
-2) @Bean annotation in Java based configuration 
+2) Java based configuration 
+
+@Bean annotation is used to configuare a bean in Java based configuration 
 
 `@Configuration`
 `public class AppConfig {`
