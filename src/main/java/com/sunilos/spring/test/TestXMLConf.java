@@ -11,14 +11,21 @@ import com.sunilos.spring.service.UserService;
 
 /**
  * 
- * Creates ApplicationContext and get a bean and print bean properties
- *
+ * It tests XML based spring container configuration and creates
+ * ApplicationContext container object.
+ * 
+ * Beans are configured using ApplicationContext.xml file.
+ * 
+ * It demonstrates bean creation by <bean> XML tag, @Component annotation
+ * 
+ * It shown Explicit and Implicit dependency injection
+ * 
  * @author Sunil Sahu
  * @Copyright (c) SunilOS Infotech Pvt Ltd
  *
  */
 
-public class TestApplicationContext {
+public class TestXMLConf {
 
 	public static ApplicationContext context = null;
 	// public static BeanFactory context = null;
@@ -29,6 +36,9 @@ public class TestApplicationContext {
 		// ClassPathResource("applicationContext.xml"));
 	}
 
+	/**
+	 * Beans are configured using <bean> tag and depicts setter injection
+	 */
 	public static void testUserBean() {
 
 		System.out.println("---Testing User Bean---");
@@ -55,7 +65,7 @@ public class TestApplicationContext {
 	}
 
 	/**
-	 * Test customer bean
+	 * Beans are configured using <bean> tag and depicts constructor injection
 	 */
 
 	public static void testCustomerBean() {
@@ -69,7 +79,8 @@ public class TestApplicationContext {
 	}
 
 	/**
-	 * Test Order bean
+	 * Beans are configured using @Component tag and depicts auto wiring
+	 * injection
 	 */
 
 	public static void testOrderBean() {
@@ -84,8 +95,10 @@ public class TestApplicationContext {
 
 	}
 
+	/**
+	 * Beans are configured using @Configuration and @Bean annotation
+	 */
 	public static void testStudentBean() {
-
 		System.out.println("---Testing Student Bean---");
 		Student std = (Student) context.getBean("studentBean");
 		System.out.println("First Name: " + std.getFirstName());
