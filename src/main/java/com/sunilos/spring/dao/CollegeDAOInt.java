@@ -19,7 +19,7 @@ public interface CollegeDAOInt {
 	 * @param dto
 	 * @throws DatabaseException
 	 */
-	public College add(College dto);
+	public Long add(College dto);
 
 	/**
 	 * Updates a College

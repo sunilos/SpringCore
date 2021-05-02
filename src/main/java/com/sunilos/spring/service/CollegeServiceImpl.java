@@ -4,12 +4,14 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.sunilos.spring.bean.College;
 import com.sunilos.spring.dao.CollegeDAOInt;
+import com.sunilos.spring.exception.ApplicationException;
 
 /**
  * Service class contains College module business logics. It does transactional
@@ -31,9 +33,10 @@ public class CollegeServiceImpl implements CollegeServiceInt {
 	/**
 	 * Adds a College.
 	 */
-	@Transactional
-	public College add(College dto) {
-		return dao.add(dto);
+	@Transactional(propagation = Propagation.REQUIRED)
+	public Long add(College dto) {
+		Long c = dao.add(dto);
+		return c;
 	}
 
 	/**

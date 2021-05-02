@@ -7,22 +7,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-@Component("order")
-
 /**
- * Order bean. Payment and Inventory beans are injected in Order bean
+ * Order bean, defined by annotation @Component, Payment, and Inventory beans
+ * are injected into Order bean.
  * 
  * @author Sunil Sahu
  * @Copyright (c) SunilOS Infotech Pvt Ltd
  *
  */
+@Component("order")
 public class Order {
 
 	/**
-	 * Auto-wiring by Type
+	 * Payment bean is autowired using by-type mode
 	 */
 	@Autowired
-
 	private Payment p = null;
 
 	/**

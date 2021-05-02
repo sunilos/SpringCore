@@ -14,8 +14,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class Payment {
 
+	/**
+	 * Balance is initialized using @Value annotation
+	 */
 	@Value(value = "100")
-
 	double balance = 0;
 
 	public double getBalance() {

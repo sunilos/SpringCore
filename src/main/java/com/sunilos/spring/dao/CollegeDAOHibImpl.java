@@ -19,7 +19,7 @@ import com.sunilos.spring.bean.College;
  * @Copyright (c) SunilOS
  */
 
-@Repository("collegeDAO")
+@Repository
 public class CollegeDAOHibImpl implements CollegeDAOInt {
 
 	@Autowired
@@ -33,7 +33,7 @@ public class CollegeDAOHibImpl implements CollegeDAOInt {
 	 * @param dto
 	 * @throws DatabaseException
 	 */
-	public College add(College dto) {
+	public Long add(College dto) {
 		log.debug("DAO add Started");
 		College c = findByName(dto.getName());
 		if (c != null) {
@@ -41,7 +41,7 @@ public class CollegeDAOHibImpl implements CollegeDAOInt {
 		}
 		long pk = (Long) sessionFactory.getCurrentSession().save(dto);
 		dto.setId(pk);
-		return dto;
+		return pk;
 	}
 
 	/**

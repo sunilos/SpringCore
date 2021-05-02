@@ -14,8 +14,15 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-@Configuration
-@EnableTransactionManagement
+/**
+ * It will be used for JPA configuration
+ * 
+ * @author Sunil Sahu
+ *
+ */
+
+// @Configuration
+// @EnableTransactionManagement
 public class JPAConfig {
 
 	@Autowired
@@ -34,16 +41,16 @@ public class JPAConfig {
 		em.setJpaProperties(properties);
 		return em;
 	}
-	
+
 	@Bean
 	public PlatformTransactionManager transactionManager() {
 	    JpaTransactionManager transactionManager = new JpaTransactionManager();
 	    transactionManager.setEntityManagerFactory(entityManagerFactory().getObject());
 	    return transactionManager;
 	}
-	 
+
 	@Bean
-	public PersistenceExceptionTranslationPostProcessor exceptionTranslation(){
+	public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
 	    return new PersistenceExceptionTranslationPostProcessor();
 	}
 }

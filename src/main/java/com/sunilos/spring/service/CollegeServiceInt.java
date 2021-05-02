@@ -20,7 +20,7 @@ public interface CollegeServiceInt {
 	 * @param dto
 	 * @return
 	 */
-	public College add(College dto);
+	public Long add(College dto);
 
 	/**
 	 * Updates a College

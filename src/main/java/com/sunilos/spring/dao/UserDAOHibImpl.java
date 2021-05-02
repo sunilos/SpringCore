@@ -9,6 +9,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
+import org.springframework.stereotype.Repository;
 
 import com.sunilos.spring.bean.UserDTO;
 
@@ -27,7 +28,7 @@ import com.sunilos.spring.bean.UserDTO;
  * @url www.sunilbooks.com
  */
 
-//@Repository
+@Repository
 public class UserDAOHibImpl implements UserDAOInt {
 
 	@Autowired

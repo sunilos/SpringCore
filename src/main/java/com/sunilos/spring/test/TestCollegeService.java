@@ -10,6 +10,12 @@ import org.springframework.stereotype.Component;
 import com.sunilos.spring.bean.College;
 import com.sunilos.spring.service.CollegeServiceInt;
 
+/**
+ * Test case of CollegeDAO
+ * 
+ * @author Sunil Sahu
+ *
+ */
 @Component("collegeTest")
 public class TestCollegeService {
 
@@ -26,30 +32,34 @@ public class TestCollegeService {
 
 		TestCollegeService test = (TestCollegeService) context.getBean("collegeTest");
 		// test.testFindByPk();
-		// test.testAdd();
+		test.testAdd();
 		// test.testUpdate();
-		test.testSearch();
+		// test.testSearch();
 	}
 
 	public void testSearch() {
 		College dto = new College();
-		System.out.println("service->" + service);
+		// System.out.println("service->" + service);
 		List<College> l = service.search(dto, 0, 0);
+		System.out.println("\n--Test college search--");
+		System.out.println("Total records: " + l.size());
+		int i = 0;
 		l.forEach(e -> {
-			System.out.print("Name " + e.getName());
+			System.out.print("Name: " + e.getName());
+			System.out.print("Address: " + e.getAddress());
 			System.out.println();
 		});
-		System.out.println(l);
+
 	}
 
 	public void testAdd() {
 		College dto = new College();
-		dto.setName("ABC");
+		dto.setName("ABC2");
 		dto.setAddress("ABC");
 		dto.setState("ABC@gmail.com");
 		dto.setCity("pass1234");
-		dto = service.add(dto);
-		System.out.println("PK->" + dto.getId());
+		Long pk = service.add(dto);
+		System.out.println("PK->" + pk);
 	}
 
 	public void testUpdate() {

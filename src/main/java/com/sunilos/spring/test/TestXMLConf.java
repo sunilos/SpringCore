@@ -7,14 +7,13 @@ import com.sunilos.spring.bean.Customer;
 import com.sunilos.spring.bean.Order;
 import com.sunilos.spring.bean.Student;
 import com.sunilos.spring.bean.User;
-import com.sunilos.spring.service.UserService;
 
 /**
  * 
  * It tests XML based spring container configuration and creates
  * ApplicationContext container object.
  * 
- * Beans are configured using ApplicationContext.xml file.
+ * Beans are configured using ApplicationContext.xml and AppConfig.class files.
  * 
  * It demonstrates bean creation by <bean> XML tag, @Component annotation
  * 
@@ -32,8 +31,6 @@ public class TestXMLConf {
 
 	static {
 		context = new ClassPathXmlApplicationContext("applicationContext.xml");
-		// context = new XmlBeanFactory(new
-		// ClassPathResource("applicationContext.xml"));
 	}
 
 	/**
@@ -41,7 +38,7 @@ public class TestXMLConf {
 	 */
 	public static void testUserBean() {
 
-		System.out.println("---Testing User Bean---");
+		System.out.println("\n---Testing User Bean---");
 
 		// get User bean
 
@@ -50,17 +47,16 @@ public class TestXMLConf {
 		// Print container properties of bean
 		System.out.println("##Bean properties");
 
-		System.out.println("Bean contains: " + context.containsBean("userBean"));
+		System.out.println("1: Bean contains: " + context.containsBean("userBean"));
 
-		System.out.println("Type of bean: " + context.getType("userBean"));
+		System.out.println("2: Type of bean: " + context.getType("userBean"));
 
-		System.out.println("is Singlton: " + context.isSingleton("userBean"));
+		System.out.println("3: is bean singlton: " + context.isSingleton("userBean"));
 
 		// print first name value
-
-		System.out.println(bean.getFirstName());
-
-		System.out.println(bean.getRole().getName());
+		System.out.println("Bean initialized values");
+		System.out.println("First Name: " + bean.getFirstName());
+		System.out.println("Role: " + bean.getRole().getName());
 
 	}
 
@@ -70,7 +66,7 @@ public class TestXMLConf {
 
 	public static void testCustomerBean() {
 
-		System.out.println("---Testing Customer Bean---");
+		System.out.println("\n---Testing Customer Bean---");
 
 		Customer customer = (Customer) context.getBean("customerBean");
 
@@ -85,7 +81,7 @@ public class TestXMLConf {
 
 	public static void testOrderBean() {
 
-		System.out.println("---Testing Order Bean---");
+		System.out.println("\n---Testing Order Bean---");
 
 		Order o = (Order) context.getBean("order");
 
@@ -96,10 +92,11 @@ public class TestXMLConf {
 	}
 
 	/**
-	 * Beans are configured using @Configuration and @Bean annotation
+	 * Beans are configured using @Configuration and @Bean annotation in
+	 * AppConfig class
 	 */
 	public static void testStudentBean() {
-		System.out.println("---Testing Student Bean---");
+		System.out.println("\n---Testing Student Bean---");
 		Student std = (Student) context.getBean("studentBean");
 		System.out.println("First Name: " + std.getFirstName());
 		System.out.println("Last Name: " + std.getLastName());
@@ -111,8 +108,9 @@ public class TestXMLConf {
 
 	public static void testUserService() {
 
-		UserService service = (UserService) context.getBean("userService");
-		System.out.println("Authenticate :" + service.authenticate("SunilOS", "sunilOS"));
+		// UserService service = (UserService) context.getBean("userService");
+		// System.out.println("Authenticate :" + service.authenticate("SunilOS",
+		// "sunilOS"));
 
 	}
 

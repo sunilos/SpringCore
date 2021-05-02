@@ -14,6 +14,7 @@
 		<springframework.version>5.1.4.RELEASE</springframework.version>
 		<hibernate.version>5.2.11.Final</hibernate.version>
 		<hibernate.validator>5.4.1.Final</hibernate.validator>
+		<c3p0.version>0.9.5.2</c3p0.version>
 	</properties>
 
 	<dependencies>
@@ -36,13 +37,11 @@
 			<version>1.3.2</version>
 		</dependency>
 
-		<!-- Spring's transaction infrastructure. Also includes DAO support and 
-			JCA integration. -->
-
+		<!-- Database configuration -->
 		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-tx</artifactId>
-			<version>${springframework.version}</version>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.6</version>
 		</dependency>
 
 		<!-- JDBC Data Access Library (depends on spring-core, spring-beans, spring-context, 
@@ -50,6 +49,15 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+
+		<!-- Spring's transaction infrastructure. Also includes DAO support and 
+			JCA integration. -->
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
 			<version>${springframework.version}</version>
 		</dependency>
 
@@ -62,17 +70,25 @@
 			<version>${springframework.version}</version>
 		</dependency>
 
+		<!-- Hibernate Core -->
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.6</version>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
 		</dependency>
 
-		<!-- Hibernate Core -->
+		<!-- Hibernate-C3P0 Integration -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-c3p0</artifactId>
 			<version>${hibernate.version}</version>
+		</dependency>
+
+		<!-- c3p0 -->
+		<dependency>
+			<groupId>com.mchange</groupId>
+			<artifactId>c3p0</artifactId>
+			<version>${c3p0.version}</version>
 		</dependency>
 
 		<!-- Hibernate Validator -->
@@ -96,13 +112,8 @@
 			<version>${springframework.version}</version>
 			<scope>test</scope>
 		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-jpa</artifactId>
-			<version>2.3.1.RELEASE</version>
-		</dependency>
-
+		<!-- <dependency> <groupId>org.springframework.data</groupId> <artifactId>spring-data-jpa</artifactId> 
+			<version>2.3.1.RELEASE</version> </dependency> -->
 
 		<dependency>
 			<groupId>log4j</groupId>

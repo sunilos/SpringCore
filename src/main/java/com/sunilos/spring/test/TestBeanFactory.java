@@ -9,8 +9,8 @@ import com.sunilos.spring.bean.User;
 
 /**
  * 
- * It tests XML based spring container configuration and creates
- * BeanFactory container object.
+ * It tests XML based spring container configuration and creates BeanFactory
+ * container object.
  * 
  * Beans are configured using ApplicationContext.xml file.
  * 
@@ -47,17 +47,16 @@ public class TestBeanFactory {
 		// Print container properties of bean
 		System.out.println("##Bean properties");
 
-		System.out.println("Bean contains: " + context.containsBean("userBean"));
+		System.out.println("1: Bean contains: " + context.containsBean("userBean"));
 
-		System.out.println("Type of bean: " + context.getType("userBean"));
+		System.out.println("2: Type of bean: " + context.getType("userBean"));
 
-		System.out.println("is Singlton: " + context.isSingleton("userBean"));
+		System.out.println("3: is bean singlton: " + context.isSingleton("userBean"));
 
 		// print first name value
-
-		System.out.println(bean.getFirstName());
-
-		System.out.println(bean.getRole().getName());
+		System.out.println("Bean initialized values");
+		System.out.println("First Name: " + bean.getFirstName());
+		System.out.println("Role: " + bean.getRole().getName());
 
 	}
 
@@ -74,7 +73,6 @@ public class TestBeanFactory {
 		System.out.println("Account balance :" + customer.getAccount().getBalance());
 
 	}
-
 
 	public static void main(String[] args) {
 

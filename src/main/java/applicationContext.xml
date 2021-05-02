@@ -1,7 +1,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xmlns:context="http://www.springframework.org/schema/context"
+xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
   http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
@@ -27,12 +27,8 @@
 		<property name="role" ref="roleBean" />
 	</bean>
 
-	<!--Scan @Component, @Repository, @Service,and @Controller spring beans -->
-	<context:component-scan base-package="com.sunilos.spring" />
 
 	<!-- Spring DAO configuration -->
-
-
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
@@ -55,7 +51,6 @@
 			</props>
 		</property>
 	</bean>
-
 	<bean id="hibernateTransactionManager"
 		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
@@ -64,4 +59,6 @@
 	<!-- enables annotation based transaction -->
 	<tx:annotation-driven transaction-manager="hibernateTransactionManager" />
 
+	<!--Scan @Component, @Repository, @Service,and @Controller spring beans -->
+	<context:component-scan base-package="com.sunilos.spring" />
 </beans>

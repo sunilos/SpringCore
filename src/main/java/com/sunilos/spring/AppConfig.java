@@ -7,13 +7,17 @@ import org.springframework.context.annotation.Configuration;
 import com.sunilos.spring.bean.Student;
 
 /**
- * Configure beans using Java configuration. Configuration classes must be
- * annotated by @Configuration annotation
+ * ##Java based configuration
  * 
- * @ComponentScan annotation scans all annotated classes from base package and
+ * #Class annotated by @Configuration annotation defines configuration class.
+ * 
+ * #Annotation @Bean is used to define the class in configuration class.
+ * 
+ * #Annotation @ComponentScan scans all annotated classes from base package and
  *                register with spring container.
  * 
  * @author Sunil Sahu
+ * @Copyright (c) SunilOS Infotech Pvt Ltd
  *
  */
 
