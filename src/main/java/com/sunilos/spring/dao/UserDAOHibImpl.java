@@ -103,9 +103,6 @@ public class UserDAOHibImpl implements UserDAOInt {
 			if (dto.getDob() != null && dto.getDob().getDate() > 0) {
 				criteria.add(Restrictions.eq("dob", dto.getDob()));
 			}
-			if (dto.getLastLogin() != null && dto.getLastLogin().getTime() > 0) {
-				criteria.add(Restrictions.eq("lastLogin", dto.getLastLogin()));
-			}
 			if (dto.getRoleId() > 0) {
 				criteria.add(Restrictions.eq("roleId", dto.getRoleId()));
 			}

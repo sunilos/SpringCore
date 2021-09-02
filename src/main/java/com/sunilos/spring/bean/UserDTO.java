@@ -73,11 +73,7 @@ public class UserDTO {
 	 */
 	@Column(name = "GENDER", length = 10)
 	private String gender;
-	/**
-	 * Last login timestamp
-	 */
-	@Column(name = "LAST_LOGIN", length = 50)
-	private Timestamp lastLogin;
+
 
 	/**
 	 * IP Address of User from where User was registred.
@@ -168,14 +164,6 @@ public class UserDTO {
 
 	public void setGender(String gender) {
 		this.gender = gender;
-	}
-
-	public Timestamp getLastLogin() {
-		return lastLogin;
-	}
-
-	public void setLastLogin(Timestamp lastLogin) {
-		this.lastLogin = lastLogin;
 	}
 
 	public String getRegisteredIP() {

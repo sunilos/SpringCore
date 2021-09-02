@@ -24,7 +24,7 @@ import com.sunilos.spring.bean.Student;
 @Configuration
 // @ComponentScan annotation scans all annotated classes from base package
 // and register with spring container.
-@ComponentScan(basePackages = { "com.sunilos.spring" })
+//@ComponentScan(basePackages = { "com.sunilos.spring" })
 public class AppConfig {
 
 	/**
